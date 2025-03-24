@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\SingleController;
+use App\Http\Controllers\testing;
+
 // Route::get('/', function () {
 //     return view('welcome');
 // });
@@ -15,4 +16,6 @@ Route::controller(UserController::class)->group(function(){
         Route::get('/blog','blog')->name('blog');
 });
 
-Route::get('/why',SingleController::class);
+// Route::get('/why',SingleController::class);
+
+Route::get('/test',testing::class);
