@@ -20,7 +20,7 @@ Route::prefix('page')->group(function(){
     Route::get('/gallery/pic',function(){
         return "<h1>Gallery pic 1 image page Group </h1>";
     });
-});
+});  
 
 Route::fallback(function(){
  return " <h1>...\......Page not found .../......</h1>";
