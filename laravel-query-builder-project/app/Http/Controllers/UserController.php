@@ -20,4 +20,10 @@ class UserController extends Controller
         // return $users;
     //  dd($users);  //  debug information it just for testing purpose if we don't want to return data so we can use this
     }
+
+    public function singleUser(string $id){
+        $user = DB::table('users')->where('id',$id)->get();
+        // return $user;
+        return view('singleUser',['data'=>$user]);
+    }
 }

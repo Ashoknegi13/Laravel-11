@@ -10,3 +10,5 @@ use App\Http\Controllers\UserController;
 
 Route::get('/',[UserController::class,'show']);
 
+Route::get('/user/{id}',[UserController::class,'singleUser'])->name('view.user');
+

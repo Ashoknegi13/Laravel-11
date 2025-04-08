@@ -1,0 +1,51 @@
+[
+    {
+        "name":"ashok",
+        "email":"negiashok132@gmail.com",
+        "age":21,
+        "city":"Rudraprayag"
+    },
+    {
+        "name":"ankit negi",
+        "email":"ank@gmail.com",
+        "age":27,
+        "city":"srinager"
+    },
+    {
+        "name":"rahul bisht",
+        "email":"bishtrahul@gmail.com",
+        "age":16,
+        "city":"srinager"
+    },
+    {
+        "name":"Deepak panwar",
+        "email":"deepal@gmail.com",
+        "age":19,
+        "city":"srinager"
+    },
+    {
+        "name":"Ayush Khanduri",
+        "email":"Khanduri@gmail.com",
+        "age":43,
+        "city":"Rudraprayag"
+    },
+    {
+        "name":"myank jain",
+        "email":"jain@gmail.com",
+        "age":27,
+        "city":"srinager"
+    },
+    {
+        "name":"mohan",
+        "email":"mohan@gmail.com",
+        "age":18,
+        "city":"Rudraprayag"
+    },
+    {
+        "name":"anita annu",
+        "email":"annu@gmail.com",
+        "age":21,
+        "city":"Rudraprayag"
+    }
+
+]
