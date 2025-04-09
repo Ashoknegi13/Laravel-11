@@ -8,8 +8,12 @@ use Illuminate\Support\facades\DB;
 class UserController extends Controller
 {
     public function show(){
-        $users = DB::table('users')->get();
-        
+        $users = DB::table('users')
+                    ->where('name','LIKE','m%')
+                    ->where('age','>',18)
+                    ->get();
+       
+                    // return $users;
         return view('alluser',['data'=>$users]);
         
 
