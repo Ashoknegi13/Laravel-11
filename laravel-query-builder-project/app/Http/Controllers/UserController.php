@@ -9,8 +9,8 @@ class UserController extends Controller
 {
     public function show(){
         $users = DB::table('users')
-                    ->where('name','LIKE','m%')
-                    ->where('age','>',18)
+                    // ->where('name','LIKE','m%')
+                    // ->where('age','>',18)
                     ->get();
        
                     // return $users;
@@ -29,5 +29,27 @@ class UserController extends Controller
         $user = DB::table('users')->where('id',$id)->get();
         // return $user;
         return view('singleUser',['data'=>$user]);
+    }
+
+    public function addUser(){
+        // $user =  DB::table('users')->insertOrIgnore(
+       $user =  DB::table('users')
+                             ->upsert(
+                              [
+                                  'name'=>'sonuuuu Bisht',
+                                     'email'=>'devendre@gmail.com',
+                                    'age'=>21 ,
+                                   'city'=>'pabo' 
+                             ],
+                             ['email'],
+                             ['city']
+                    );
+
+        dump($user);
+        if($user){
+            echo "<h1>Data Successfullyy Addd</h1> <br> <a href=".route('home') .">Home</a>";
+        }else{
+            echo "<h1>Data Failed</h1> <br> <a href=".route('home') .">Home</a>";
+        }
     }
 }

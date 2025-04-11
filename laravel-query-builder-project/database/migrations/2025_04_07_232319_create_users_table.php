@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('email',50)->unique();
             $table->integer('age');
             $table->string('city',200);
-            $table->timestamps();
+            // $table->timestamps();
         });
     }
 
