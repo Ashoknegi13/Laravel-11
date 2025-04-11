@@ -34,22 +34,52 @@ class UserController extends Controller
     public function addUser(){
         // $user =  DB::table('users')->insertOrIgnore(
        $user =  DB::table('users')
-                             ->upsert(
+                             ->insertGetId(
                               [
-                                  'name'=>'sonuuuu Bisht',
-                                     'email'=>'devendre@gmail.com',
-                                    'age'=>21 ,
-                                   'city'=>'pabo' 
-                             ],
-                             ['email'],
-                             ['city']
+                                  'name'=>'priti Bisht',
+                                     'email'=>'priti@gmail.com',
+                                    'age'=>25,
+                                   'city'=>'chwith' 
+                             ] 
                     );
 
-        dump($user);
-        if($user){
-            echo "<h1>Data Successfullyy Addd</h1> <br> <a href=".route('home') .">Home</a>";
-        }else{
-            echo "<h1>Data Failed</h1> <br> <a href=".route('home') .">Home</a>";
-        }
+                 return $user;
+        // dump($user);
+        // if($user){
+        //     echo "<h1>Data Successfullyy Addd</h1> <br> <a href=".route('home') .">Home</a>";
+        // }else{
+        //     echo "<h1>Data Failed</h1> <br> <a href=".route('home') .">Home</a>";
+        // }
     }
+
+    public function updateUser(){
+      $user = DB::table('users')
+                ->updateOrInsert(
+                        [
+                            'name'=>'asho',
+                            'email'=>'negiashok13@gmail.com',
+                            // 'age'=>21,
+                             'city'=>'ratuda'
+                        ],
+                        [
+                            'age'=>99
+                        ]   
+                );
+      
+      
+        // $user = DB::table('users')
+        //             ->where('id',1)
+        //             ->update([
+        //                 'city'=>'pabo',
+        //                 'age'=>19
+        //             ]);
+        //     if($user){
+        //         echo "<h1>Data Successfully Update...</h1>";
+        //     }else{
+        //         echo "<h1>Please Enter Correct Id or Data.../....</h1>";
+        //      }        
+        }
+
+
+
 }
