@@ -53,18 +53,28 @@ class UserController extends Controller
     }
 
     public function updateUser(){
-      $user = DB::table('users')
-                ->updateOrInsert(
-                        [
-                            'name'=>'asho',
-                            'email'=>'negiashok13@gmail.com',
-                            // 'age'=>21,
-                             'city'=>'ratuda'
-                        ],
-                        [
-                            'age'=>99
-                        ]   
-                );
+        $user = DB::table('users')
+                ->where('id',1)
+                ->increment('age');
+                if($user){
+                    echo "<h1>Suceessfully update</h1>";
+                }else{
+                    echo "<h1>Failed update</h1>";
+                }
+        
+    
+        //   $user = DB::table('users')
+    //             ->updateOrInsert(
+    //                     [
+    //                         'name'=>'asho',
+    //                         'email'=>'negiashok13@gmail.com',
+    //                         // 'age'=>21,
+    //                          'city'=>'ratuda'
+    //                     ],
+    //                     [
+    //                         'age'=>99
+    //                     ]   
+    //             );
       
       
         // $user = DB::table('users')
