@@ -16,3 +16,7 @@ Route::get('/add',[UserController::class,'addUser']);
 
 Route::get('/update',[UserController::class,'updateUser']);
 
+Route::get('/delete/{id}',[UserController::class,'deleteUser'])->name('delete.view');
+
+Route::get('/delete',[UserController::class,'deleteAll'])->name('deleteAll.view');
+

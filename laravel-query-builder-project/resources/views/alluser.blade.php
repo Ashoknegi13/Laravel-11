@@ -12,14 +12,17 @@
             <div class="row">
                 <div class="col-6">
                     <h1>All user data </h1>
+                    
                     <table class="table table-bordered table-striped">
+                        <tr><a href="{{ route('deleteAll.view') }}" class="btn btn-danger btn-sm">Remove all</a></tr>
                         <tr>
                             <th>User Id</th>
                             <th>Name</th>
                             <th>Email</th>
                             <th>Age</th>
                             <th>City</th>
-                            <th>Operation</th>
+                            <th>Show</th>
+                            <th>Delete</th>
                         </tr>
                         @foreach($data as $user)
                                 <tr>
@@ -29,6 +32,7 @@
                                     <td> {{ $user->age }}</td>
                                     <td> {{ $user->city }}</td>
                                     <td><a href="{{ route('view.user', $user->id) }}" class="btn btn-primary btn-sm">Show</a></td>
+                               <td> <a href="{{ route('delete.view',$user->id) }}" class="btn btn-danger btn-sm ">delete</a></td>
                                 </tr>
                         @endforeach
                     </table>

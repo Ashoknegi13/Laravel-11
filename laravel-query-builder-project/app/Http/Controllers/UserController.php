@@ -55,7 +55,8 @@ class UserController extends Controller
     public function updateUser(){
         $user = DB::table('users')
                 ->where('id',1)
-                ->increment('age');
+                ->decrement('age',5);
+                // ->increment('age');
                 if($user){
                     echo "<h1>Suceessfully update</h1>";
                 }else{
@@ -91,5 +92,28 @@ class UserController extends Controller
         }
 
 
+                public function deleteUser(string $id){
+                    $user = DB::table('users')
+                            ->where('id',$id)
+                            ->delete();
+                    
+                   if($user){
+                   return redirect()->route('home');
+                   }else{
+                    echo "<script>alert('failed')</script>";
+                   }
+                 }
+
+                 public function deleteAll(){
+                    $users = DB::table('users')
+                            ->truncate(); //  reset the id's
+
+                          //  ->delete();    does't reset id   
+                    if($users){
+                        return redirect()->route('home');
+                    }
+        
+                 }
+                
 
 }
