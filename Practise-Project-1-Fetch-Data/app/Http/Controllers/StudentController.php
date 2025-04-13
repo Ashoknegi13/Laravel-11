@@ -7,14 +7,47 @@ use Illuminate\Support\Facades\DB;
 
 class StudentController extends Controller
 {
-    public function showStudents(){
-        $students = DB::table('students')->get();
-        // dd($students);
-        return view('allStudents',['data'=>$students]);
-    }
+   // fetch all student data 
+   public function allStudents(){
+      $students =  DB::table('students')
+                  ->get();
 
-    public function singleStudent(string $id){
-        $student = DB::table('students')->where('id',$id)->get();
-        return view('singlestudent',['data'=>$student]);
+         return view('allStudents',['data'=>$students]);
+   }
+
+
+// fetch single student data 
+   public function singleStudent(string $id){
+      $student = DB::table('students')
+               ->where('id',$id)
+               ->get();
+   
+      return view('singleStudent',['data'=>$student]);
+     }
+
+
+// delete the student
+  public function deleteStudent(string $id){
+   
+      $student = DB::table('students')
+                  ->where('id',$id)
+                  ->delete();
+      if($student){
+         return redirect()->route('home');
+      }
+
+  }   
+
+
+  // delete all data
+    public function deleteAll(){
+      $students = DB::table('students')
+               ->truncate();
+
+      if($students===null){
+         return redirect()->route('home');
+      }else{
+         echo "<h1>404</h1>";
+      }
     }
 }
