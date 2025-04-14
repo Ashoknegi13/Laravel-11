@@ -31,37 +31,40 @@ class UserController extends Controller
         return view('singleUser',['data'=>$user]);
     }
 
-    public function addUser(){
+    public function addUser(Request $req){
         // $user =  DB::table('users')->insertOrIgnore(
+        // return  $req;
        $user =  DB::table('users')
-                             ->insertGetId(
+                             ->insert(
                               [
-                                  'name'=>'priti Bisht',
-                                     'email'=>'priti@gmail.com',
-                                    'age'=>25,
-                                   'city'=>'chwith' 
+                                  'name'=>$req->username,
+                                     'email'=>$req->useremail,
+                                    'age'=>$req->userage,
+                                   'city'=>$req->usercity 
                              ] 
                     );
 
-                 return $user;
+                //  return $user;
         // dump($user);
-        // if($user){
-        //     echo "<h1>Data Successfullyy Addd</h1> <br> <a href=".route('home') .">Home</a>";
-        // }else{
-        //     echo "<h1>Data Failed</h1> <br> <a href=".route('home') .">Home</a>";
-        // }
+        if($user){
+                return redirect()->route('home');
+        }else{
+            echo "<h1>Data Failed</h1> <br> <a href=".route('home') .">Home</a>";
+        }
     }
 
-    public function updateUser(){
+    public function updateUser(string $id){
         $user = DB::table('users')
-                ->where('id',1)
-                ->decrement('age',5);
+                ->where('id',$id);
+                // ->decrement('age',5);
                 // ->increment('age');
-                if($user){
-                    echo "<h1>Suceessfully update</h1>";
-                }else{
-                    echo "<h1>Failed update</h1>";
-                }
+             return $user;
+             
+                // if($user){
+                //     echo "<h1>Suceessfully update</h1>";
+                // }else{
+                //     echo "<h1>Failed update</h1>";
+                // }
         
     
         //   $user = DB::table('users')
