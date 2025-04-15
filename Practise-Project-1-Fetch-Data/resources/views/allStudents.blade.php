@@ -14,7 +14,7 @@
                 
                 <table class="table table-borderd table-striped"> 
                   <h1>All Students</h1>
-                  <a href="{{ route('deleteAll') }}" class="btn btn-danger btn-sm mb-2">Delete All</a>
+                   
                   <tr>
                     <th> User ID</th>
                     <th> Name</th>
