@@ -14,34 +14,32 @@
                     <h1>Update User </h1>
                     
                     <form action="{{ route('updateUser') }}" method="post">
-                        @foreach ($data as $id => $item)
-                                 
-
+                        
                         @csrf
                         <div class="mb-3">
-                           <input type="hidden" name="userid" value="{{ $item->id}}">
+                           <input type="hidden" name="userid" value="{{ $data->id}}">
                             <label for="username">Name</label>
                            
-                            <input type="text" class="form-control" name="username"   value="{{ $item->name}}"  ><br>
+                            <input type="text" class="form-control" name="username"   value="{{ $data->name}}"  ><br>
                         </div>
                         
                         <div class="mb-3">
                             <label for="email">Email</label>
-                            <input type="text" class="form-control" name="useremail"  value="{{ $item->email}}"   ><br>
+                            <input type="text" class="form-control" name="useremail"  value="{{ $data->email}}"   ><br>
                         </div>
                         <div class="mb-3">
                             <label for="age">Age</label>
-                            <input type="number" class="form-control" name="userage" value="{{ $item->age}}" ><br>
+                            <input type="number" class="form-control" name="userage" value="{{ $data->age}}" ><br>
                         </div>
                       <div class="mb-3">
                             <label for="city">City</label>
-                            <input type="text" class="form-control" name="usercity"  value="{{ $item->city}}" ><br>
+                            <input type="text" class="form-control" name="usercity"  value="{{ $data->city}}" ><br>
                       </div>
                      <div class="mb-3">     
                          <button type="submit"  class="btn btn-primary">Submmit</button>
                       </div>   
 
-                @endforeach
+            
                  </form>   
                 </div>
             </div>

@@ -9,21 +9,15 @@ use App\Http\Controllers\UserController;
 
 
 
-
-
-Route::get('/',[UserController::class,'show'])->name('home');
-
-Route::get('/user/{id}',[UserController::class,'singleUser'])->name('view.user');
-
-Route::post('/add',[UserController::class,'addUser'])->name('addUser');
-
-Route::get('/update/{id}',[UserController::class,'getUser'])->name('getUser');
-
-Route::get('/delete/{id}',[UserController::class,'deleteUser'])->name('delete.view');
-
-Route::get('/delete',[UserController::class,'deleteAll'])->name('deleteAll.view');
-
+Route::controller(UserController::class)->group(function(){
+                Route::get('/','show')->name('home');
+                Route::get('/user/{id}','singleUser')->name('view.user');
+                Route::post('/add','addUser')->name('addUser');
+                Route::get('/update/{id}','getUser')->name('getUser');
+                Route::get('/delete/{id}','deleteUser')->name('delete.view');
+                Route::get('/delete','deleteAll')->name('deleteAll.view');
+                Route::post('/updateUser','updateUser')->name('updateUser');
+});
 Route::view('newuser','/addUser');
 
-Route::post('/updateUser',[UserController::class,'updateUser'])->name('updateUser');
 

@@ -54,9 +54,9 @@ class UserController extends Controller
     }
  
     public function getUser(string $id){
-        $user = DB::table('users')
-                ->where('id',$id)
-                ->get();
+         $user = DB::table('users')->find($id);    // same as get() but it is short and return array not json 
+
+        // $user = DB::table('users')->where('id',$id)->get();
                 // ->decrement('age',5);
                 // ->increment('age');
                 // return $user;
