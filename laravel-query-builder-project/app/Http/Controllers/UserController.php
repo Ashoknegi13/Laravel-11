@@ -52,13 +52,15 @@ class UserController extends Controller
             echo "<h1>Data Failed</h1> <br> <a href=".route('home') .">Home</a>";
         }
     }
-
-    public function updateUser(string $id){
+ 
+    public function getUser(string $id){
         $user = DB::table('users')
-                ->where('id',$id);
+                ->where('id',$id)
+                ->get();
                 // ->decrement('age',5);
                 // ->increment('age');
-             return $user;
+                // return $user;
+        return view('updateUser',['data'=>$user]);
              
                 // if($user){
                 //     echo "<h1>Suceessfully update</h1>";
@@ -118,5 +120,25 @@ class UserController extends Controller
         
                  }
                 
+
+
+            public function updateUser(request $req ){
+            //    return $req;
+                $user = DB::table('users')
+                        ->where('id',$req->userid)
+                        ->update([
+                            'name'=> $req->username,
+                            'age'=> $req->userage,
+                            'email'=> $req->useremail,
+                            'city'=> $req->usercity
+                        ]);
+                
+                        if($user){
+                            return redirect()->route('home');
+                }else{
+                    return "<script>alert('Failed to update')</script>";
+                }
+
+            }   
 
 }

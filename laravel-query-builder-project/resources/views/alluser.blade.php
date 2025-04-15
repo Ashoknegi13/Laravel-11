@@ -34,7 +34,7 @@
                                     <td> {{ $user->city }}</td>
                                     <td><a href="{{ route('view.user', $user->id) }}" class="btn btn-primary btn-sm">Show</a></td>
                                <td> <a href="{{ route('delete.view',$user->id) }}" class="btn btn-danger btn-sm ">delete</a></td>
-                            <td><a href="{{ route('updateUser',$user->id) }}" class="btn btn-warning btn-sm">Update<a></td>
+                            <td><a href="{{ route('getUser',$user->id) }}" class="btn btn-warning btn-sm">Update<a></td>
                                 </tr>
                         @endforeach
                     </table>
