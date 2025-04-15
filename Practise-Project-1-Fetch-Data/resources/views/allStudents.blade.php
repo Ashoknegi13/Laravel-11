@@ -14,7 +14,7 @@
                 
                 <table class="table table-borderd table-striped"> 
                   <h1>All Students</h1>
-                   
+                  <a class="btn btn-success btn-sm mb-3">Add</a> 
                   <tr>
                     <th> User ID</th>
                     <th> Name</th>
@@ -24,8 +24,7 @@
                     <th>Show</th>
                     <th>Delete</th>
                   </tr>
-                  @foreach ($data as $stu)
-                            
+                  @foreach ($data as $stu)    
                         <tr>
                           <td> {{ $stu->id}}</td>
                           <td>{{ $stu->name}}</td>
