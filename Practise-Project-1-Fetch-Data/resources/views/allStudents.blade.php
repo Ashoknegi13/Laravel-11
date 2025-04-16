@@ -14,7 +14,7 @@
                 
                 <table class="table table-borderd table-striped"> 
                   <h1>All Students</h1>
-                  <a class="btn btn-success btn-sm mb-3">Add</a> 
+                  <a  href="addStudent"  class="btn btn-success btn-sm mb-3">Add User</a> 
                   <tr>
                     <th> User ID</th>
                     <th> Name</th>
@@ -23,6 +23,7 @@
                     <th>City</th>
                     <th>Show</th>
                     <th>Delete</th>
+                    <th>Update</th>
                   </tr>
                   @foreach ($data as $stu)    
                         <tr>
@@ -33,6 +34,7 @@
                           <td>{{ $stu->city}}</td>
                           <td><a href="{{ route('singleStudent',$stu->id)  }}" class="btn btn-success btn-sm"> show</a></td>
                           <td><a href="{{ route('deleteStudent',$stu->id)  }}" class="btn btn-danger btn-sm">delete</a></td>
+                          <td><a href="{{ route('singleStudent',$stu->id) }}" class="btn btn-primary btn-sm">update</a></td>
                         </tr>
                 @endforeach
 

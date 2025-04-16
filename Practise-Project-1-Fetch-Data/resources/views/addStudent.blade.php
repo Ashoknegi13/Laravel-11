@@ -11,31 +11,30 @@
        <div class="container">
         <div class="row">
             <div class="col-6">
-                <h1>Update Student </h1>
-                <form action="{{ route('updateStudent',$data->id)  }}" method="POST">
+                <h1>Add User</h1>
+                <form action="{{ route('addstudent')  }}" method="POST">
                     @csrf
-                    
                     <div class="row-3">
                         <label for="username">Name </label>
-                        <input type="text" class="form-control" name="username" value="{{ $data->name }}">
+                        <input type="text" class="form-control" name="username">
                     </div>
 
                     <div class="row-3">
                         <label for="useremail">Email </label>
-                        <input type="text" class="form-control" name="useremail" value="{{ $data->email }}">
+                        <input type="text" class="form-control" name="useremail">
                     </div>
 
                     <div class="row-3">
                         <label for="userage">Age </label>
-                        <input type="number" class="form-control" name="userage" value="{{ $data->age }}">
+                        <input type="number" class="form-control" name="userage">
                     </div>
 
                     <div class="row-3">
                         <label for="usercity">City </label>
-                        <input type="text" class="form-control" name="usercity"  value="{{ $data->city }}"> 
+                        <input type="text" class="form-control" name="usercity">
                     </div>
 
-                    <button type="submit " class="btn btn-primary mt-2">Update </button>
+                    <button type="submit " class="btn btn-primary mt-2">Submit </button>
                 </form>
             </div>
         </div>
