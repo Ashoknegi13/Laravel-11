@@ -4,14 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\facades\DB;
+// use Illuminate\Support\Collection\list;
 
 class UserController extends Controller
 {
     public function show(){
-        $users = DB::table('users')
+        $users = DB::table('users')->simplePaginate(3);
                     // ->where('name','LIKE','m%')
                     // ->where('age','>',18)
-                    ->get();
+                    // ->get();   don't use this with pagination
        
                     // return $users;
         return view('alluser',['data'=>$users]);

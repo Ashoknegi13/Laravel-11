@@ -24,7 +24,7 @@
                             <th>Show</th>
                             <th>Delete</th>
                             <th>Update</th>
-                        </tr>
+                        </tr> 
                         @foreach($data as $id=> $user)
                                 <tr>
                                     <td> {{ $user->id }} </td>
@@ -38,6 +38,9 @@
                                 </tr>
                         @endforeach
                     </table>
+                    <div class="mt-5">
+                        {{ $data->list( ) }}
+                    </div>
                 </div>
             </div>
         </div> 
