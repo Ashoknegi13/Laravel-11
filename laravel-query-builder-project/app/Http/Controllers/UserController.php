@@ -9,7 +9,17 @@ use Illuminate\Support\facades\DB;
 class UserController extends Controller
 {
     public function show(){
-        $users = DB::table('users')->simplePaginate(3);
+        $users = DB::table('users')
+                    ->orderBy('id')
+                    ->cursorPaginate(3);            
+        
+        
+        
+        // ->Paginate(2);
+                    // ->fragment('students');  it send a # value in url
+                    // ->appends(['sort'=>'votes']);   this is for extra information in url 
+
+        // ->Paginate(2,['*'],'ashok');
                     // ->where('name','LIKE','m%')
                     // ->where('age','>',18)
                     // ->get();   don't use this with pagination
