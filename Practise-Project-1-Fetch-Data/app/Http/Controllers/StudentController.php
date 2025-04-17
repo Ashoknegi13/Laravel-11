@@ -24,8 +24,8 @@ class StudentController extends Controller
 
    // fetch all student data 
    public function allStudents(){
-      $students =  DB::table('students')
-                  ->get();
+      $students =  DB::table('students')->simplePaginate(3);
+                  // ->get();
 
          return view('allStudents',['data'=>$students]);
    }
