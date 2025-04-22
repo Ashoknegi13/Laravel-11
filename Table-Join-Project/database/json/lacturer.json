@@ -1,0 +1,14 @@
+[
+    {
+        "name":"ashok",
+        "email":"negiashok132@gmail.com",
+        "age":21,
+        "city":1
+    },
+    {
+        "name":"ankit negi",
+        "email":"ank@gmail.com",
+        "age":27,
+        "city":2
+    }
+]

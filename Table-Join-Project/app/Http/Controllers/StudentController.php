@@ -9,11 +9,16 @@ use  Illuminate\Support\Facades\DB;
 class StudentController extends Controller
 {
      public function showStudents(){
-        $students = DB::table('students')
-                     // ->select(DB::raw('count(*) as Total_students'))  return a total data 
-                   
-                     ->select('students.*','cities.city_name')
-                    ->join('cities','students.city','=','cities.id') 
+        $students = DB::table('students') 
+                    ->join('cities','students.city','=','cities.id')
+                    ->select(DB::raw('count(*) as Total_students'),'cities.city_name')
+                     ->groupBy('city_name')
+                     ->havingBetween('Total_students',[1,2])
+                     // ->having('Total_students','>', 1 )
+                     // ->having('cities.city_name','=','srinager')
+
+
+                  //   ->where('cities.city_name','=','srinager') 
                     ->get();    
                     
                     // ->where('students.name','LIKE','a%')
@@ -27,4 +32,7 @@ class StudentController extends Controller
 
         // return view('welcome',compact('students'));
      }
+
+
+      
 }
