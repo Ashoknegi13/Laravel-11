@@ -9,7 +9,7 @@ use  Illuminate\Support\Facades\DB;
 class StudentController extends Controller
 {
      public function showStudents(){
-        $students = DB::table('students') 
+        $students = DB::table('students')
                     ->join('cities','students.city','=','cities.id')
                     ->select(DB::raw('count(*) as Total_students'),'cities.city_name')
                      ->groupBy('city_name')
@@ -33,6 +33,15 @@ class StudentController extends Controller
         // return view('welcome',compact('students'));
      }
 
+     public function unionData(){
+      $lacturer = DB::table('lacturers');
 
+      $students = DB::table('students')
+                  ->union($lacturer)
+                  ->get();
+
+      return $students;
+      // return $lacturer;
+     }
       
 }
