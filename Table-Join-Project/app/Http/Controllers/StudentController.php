@@ -41,7 +41,7 @@ class StudentController extends Controller
                   ->get();
 
       return $students;
-      // return $lacturer;
+   
      }
       
 }
