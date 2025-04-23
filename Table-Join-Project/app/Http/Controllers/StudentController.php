@@ -34,10 +34,12 @@ class StudentController extends Controller
      }
 
      public function unionData(){
-      $lacturer = DB::table('lacturers');
+      $lacturer = DB::table('lacturers')
+                  ->select('name','email');
 
       $students = DB::table('students')
                   ->union($lacturer)
+                  ->select('name','email')
                   ->get();
 
       return $students;
