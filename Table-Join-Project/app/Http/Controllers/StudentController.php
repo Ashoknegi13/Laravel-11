@@ -35,12 +35,14 @@ class StudentController extends Controller
 
      public function unionData(){
       $lacturer = DB::table('lacturers')
-                  ->select('name','email');
+                  ->select('name','email','city_name')
+                  ->join('cities','lacturers.city','=','cities.id');
 
       $students = DB::table('students')
                   ->union($lacturer)
-                  ->select('name','email')
-                  ->get();
+                  ->select('name','email','city_name')
+                  ->join('cities','students.city','=','cities.id')
+                  ->toSql();
 
       return $students;
    
