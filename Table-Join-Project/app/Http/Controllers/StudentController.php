@@ -36,16 +36,29 @@ class StudentController extends Controller
      public function unionData(){
       $lacturer = DB::table('lacturers')
                   ->select('name','email','city_name')
-                  ->join('cities','lacturers.city','=','cities.id');
+                  ->join('cities','lacturers.city','=','cities.id')
+                  ->where('city_name','=','Rudraprayag');
 
       $students = DB::table('students')
                   ->union($lacturer)
                   ->select('name','email','city_name')
                   ->join('cities','students.city','=','cities.id')
-                  ->toSql();
+                  ->where('city_name','=','Srinager')
+                  ->get();
 
       return $students;
    
      }
       
+
+     public function whenData(){
+      $students = DB::table('students')
+                  ->when(true,function($query){
+                     $query->where('age',">",18);
+                  })
+                  ->get();
+
+         return $students;
+     }
+
 }
