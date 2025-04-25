@@ -35,13 +35,13 @@ class StudentController extends Controller
 
      public function unionData(){
       $lacturer = DB::table('lacturers')
-                  ->select('name','email','city_name')
+                  ->select('name','email','city_name','age')
                   ->join('cities','lacturers.city','=','cities.id')
                   ->where('city_name','=','Rudraprayag');
 
       $students = DB::table('students')
                   ->union($lacturer)
-                  ->select('name','email','city_name')
+                  ->select('name','email','city_name','age')
                   ->join('cities','students.city','=','cities.id')
                   ->where('city_name','=','Srinager')
                   ->get();
@@ -52,10 +52,16 @@ class StudentController extends Controller
       
 
      public function whenData(){
+      $var = true;
       $students = DB::table('students')
-                  ->when(true,function($query){
-                     $query->where('age',">",18);
-                  })
+                        ->when($var, function($query){
+                           $query->where('age','>',20);
+                        },function($query){
+                           $query->where('age','<',20);
+                        })
+                   // ->when(true,function($query){
+                  //    $query->where('age',">",18);
+                  // })
                   ->get();
 
          return $students;
