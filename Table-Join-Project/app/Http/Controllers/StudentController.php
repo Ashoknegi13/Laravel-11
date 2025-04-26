@@ -67,4 +67,14 @@ class StudentController extends Controller
          return $students;
      }
 
+      public function chunkData(){
+         $students = DB::table('students')->orderBy('id')
+                     ->chunk(3,function($students){
+                        echo "<div style='border:1px solid black;margin:12px   '>";
+                        foreach($students as $student){
+                              echo $student->name ."<br>";
+                        }
+                        echo "</div>";
+                     });
+      }
 }

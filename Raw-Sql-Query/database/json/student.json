@@ -1,0 +1,51 @@
+[
+    {
+        "name":"ashok",
+        "email":"negiashok132@gmail.com",
+        "age":21,
+        "city":1
+    },
+    {
+        "name":"ankit negi",
+        "email":"ank@gmail.com",
+        "age":27,
+        "city":2
+    },
+    {
+        "name":"rahul bisht",
+        "email":"bishtrahul@gmail.com",
+        "age":16,
+        "city":2
+    },
+    {
+        "name":"Deepak panwar",
+        "email":"deepal@gmail.com",
+        "age":19,
+        "city":2
+    },
+    {
+        "name":"Ayush Khanduri",
+        "email":"Khanduri@gmail.com",
+        "age":43,
+        "city": 1
+    },
+    {
+        "name":"myank jain",
+        "email":"jain@gmail.com",
+        "age":27,
+        "city":3
+    },
+    {
+        "name":"mohan",
+        "email":"mohan@gmail.com",
+        "age":18,
+        "city":3
+    },
+    {
+        "name":"anita annu",
+        "email":"annu@gmail.com",
+        "age":21,
+        "city":4
+    }
+
+]
