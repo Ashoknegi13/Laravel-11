@@ -8,8 +8,33 @@ use Illuminate\Support\Facades\DB;
 class StudentController extends Controller
 {
         public function showStudents(){
-            $students = DB::select("select * from students");
-            
+            $students = DB::select("select name,age from students");
              return $students;
+
+        // foreach($students as $student){
+        //         echo $student->name."<br>";
+        // }
         }
+
+        public function updateStudent(){
+                $students = DB::update('update students set name="ankiii" where id = 2');
+
+                if($students){
+                        echo " Successfully update";
+                }else{
+                        echo " Failed to update";
+                }
+        
+        }
+
+        public function addStudent(){
+                $student = DB::insert('insert into students(name,email,age,city) 
+                                Values(?,?,?,?)',['yahooo','yahoo@gmail.com',99,2]);
+                                return students;
+        }
+
+        public function deleteStudent(){
+                $student = DB::delete("delete from  students where id = ? ",[8]);
+                return $student;
+                }
 }

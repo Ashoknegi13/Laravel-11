@@ -10,3 +10,9 @@ use App\Http\Controllers\StudentController;
 
 
 Route::get('/',[StudentController::class,'showStudents']);
+
+Route::get('/update',[StudentController::class,'updateStudent']);
+
+Route::get('/add',[StudentController::class,'addStudent']);
+
+Route::get('/delete',[StudentController::class,'deleteStudent']);
