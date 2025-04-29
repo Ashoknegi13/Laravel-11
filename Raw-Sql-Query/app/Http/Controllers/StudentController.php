@@ -8,9 +8,34 @@ use Illuminate\Support\Facades\DB;
 class StudentController extends Controller
 {
         public function showStudents(){
-            $students = DB::select("select name,age from students");
-             return $students;
-
+             $student = DB::table('students')
+                        ->selectRaw('name,age')
+                        // ->whereRaw('age > ? and name like ? ',[18,'a%'])
+                        ->orderByRaw('age DESC')
+                        ->get();
+                return $student;
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+                // $student = DB::unprepared("delete from students where id = 1");
+                // return $student;        
+   
+                //     $students = DB::select("select name,age from students");
+        //      return $students;
+   
         // foreach($students as $student){
         //         echo $student->name."<br>";
         // }
