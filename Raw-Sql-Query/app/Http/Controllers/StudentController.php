@@ -9,9 +9,10 @@ class StudentController extends Controller
 {
         public function showStudents(){
              $student = DB::table('students')
-                        ->selectRaw('name,age')
+                        ->selectRaw('count(*) as Student_count,age')
                         // ->whereRaw('age > ? and name like ? ',[18,'a%'])
-                        ->orderByRaw('age DESC')
+                        // ->orderByRaw('age')
+                        ->groupBy('age','city')
                         ->get();
                 return $student;
              
