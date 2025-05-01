@@ -12,6 +12,11 @@
             <div class="row">
                 <div class="col-4">
                     <h1>Add new User</h1>
+                    <pre>
+                    @php
+                        print_r($errors->all())    
+                    @endphp
+                    </pre>
                     <form action="{{ route('addUser') }}" method="post">
                         @csrf           
                         <div class="mb-3">
