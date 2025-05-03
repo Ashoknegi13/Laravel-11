@@ -1,0 +1,14 @@
+[
+    {
+        "name":"ashok",
+        "email":"negiashok132@gmnail.com",
+        "age": 21,
+        "city": 2
+    },
+    {
+        "name":"anita",
+        "email":"annu@gmnail.com",
+        "age": 18,
+        "city": 1
+    }
+]
