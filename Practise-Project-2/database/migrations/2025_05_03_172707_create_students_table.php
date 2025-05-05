@@ -18,6 +18,7 @@ return new class extends Migration
             $table->integer('age');
             $table->integer('city');
             // $table->timestamps();
+            // $table->foreign('city')->references('id')->on('cities');
         });
     }
 
