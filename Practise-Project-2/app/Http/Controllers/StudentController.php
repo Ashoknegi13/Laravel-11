@@ -43,7 +43,7 @@ class StudentController extends Controller
 
 
   public function deleteUser(string $id){
-    $student = DB::table('students')->where('id',$id)->truncate();
+    $student = DB::table('students')->where('id',$id)->delete();
 
     if($student){
       redirect()->route('home');
