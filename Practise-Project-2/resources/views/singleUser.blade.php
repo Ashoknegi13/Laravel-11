@@ -16,17 +16,16 @@
         <div class="container">
             <div class="row">
                 <div class="col-6">
-                    <h1>All user data </h1>
+                    <h1>Single User Data </h1>
                     
                     <table class="table table-bordered table-striped">
-                        <tr><a href="/newuser" class="btn btn-success btn-sm mb-3">Add New </a></tr>
+                        {{-- <tr><a href="" class="btn btn-success btn-sm mb-3">Add New </a></tr> --}}
                         <tr>
                             <th>User Id</th>
                             <th>Name</th>
                             <th>Email</th>
                             <th>Age</th>
                             <th>City</th>
-                            <th>Show</th>
                             <th>Delete</th>
                             <th>Update</th>
                         </tr>
@@ -36,10 +35,9 @@
                             <td> {{ $items->name }}</td>
                             <td> {{ $items->email }}</td>
                             <td> {{ $items->age }}</td>
-                            <td> {{ $items->city_name}}</td>
+                            <td> {{ $items->city_name }}</td>
                             {{-- <td> {{ $items->id }}</td> --}}
-                            <td><a href=" {{ route('single',$items->id) }}">sh</a></td>
-                            <td><a href="{{ route('delete',$items->id) }}">del</a></td>
+                            <td><a href="">del</a></td>
                             <td><a href="">upd</a></td>
                         </tr>
                     @endforeach
