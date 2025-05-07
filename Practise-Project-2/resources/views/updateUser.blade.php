@@ -11,15 +11,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-4">
-                    <h1>Update User</h1>{{ $data }}
-                     @php
-                        echo $annu->name  
-                     @endphp
+                    <h1>Update User</h1>
+                   
                     <form  method="post">
                         @csrf
                         <div class="mb-3">
                             <label for="username">Name</label>
-                            <input type="text" class="form-control" name="username" value=""><br>
+                            <input type="text" class="form-control" name="username" value="{{ $annu->name}}"><br>
                         </div>
                         
                         <div class="mb-3">

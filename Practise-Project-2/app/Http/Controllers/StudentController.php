@@ -59,7 +59,7 @@ class StudentController extends Controller
                 ->join('cities','students.city','=','cities.id')
                 ->select('students.name','students.email','students.age','cities.city_name')
                 ->where('students.id',$id)
-                ->get();
+                ->first();
 
                   return view('updateUser',['annu'=>$student]);
                 // return $student;
