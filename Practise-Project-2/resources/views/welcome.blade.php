@@ -40,7 +40,7 @@
                             {{-- <td> {{ $items->id }}</td> --}}
                             <td><a href=" {{ route('single',$items->id) }}">sh</a></td>
                             <td><a href="{{ route('delete',$items->id) }}">del</a></td>
-                            <td><a href="">upd</a></td>
+                            <td><a href="{{ route('update',$items->id) }}">upd</a></td>
                         </tr>
                     @endforeach
                     </table>

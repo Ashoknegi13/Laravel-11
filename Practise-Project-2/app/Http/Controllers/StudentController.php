@@ -53,4 +53,15 @@ class StudentController extends Controller
     // return view('deleteUser');
 
   }
+
+  public function updateUser(string $id){
+      $student = DB::table('students')
+                ->join('cities','students.city','=','cities.id')
+                ->select('students.name','students.email','students.age','cities.city_name')
+                ->where('students.id',$id)
+                ->get();
+
+                  return view('updateUser',['data'=>$student]);
+                // return $student;
+  } 
 }
