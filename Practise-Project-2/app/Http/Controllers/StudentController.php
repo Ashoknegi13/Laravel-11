@@ -61,7 +61,7 @@ class StudentController extends Controller
                 ->where('students.id',$id)
                 ->get();
 
-                  return view('updateUser',['data'=>$student]);
+                  return view('updateUser',['annu'=>$student]);
                 // return $student;
   } 
 }
