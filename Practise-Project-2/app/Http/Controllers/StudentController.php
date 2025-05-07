@@ -46,7 +46,7 @@ class StudentController extends Controller
     $student = DB::table('students')->where('id',$id)->delete();
 
     if($student){
-      redirect()->route('home');
+      return redirect()->route('home');
     }else{
       echo " <h1>Can't delete the Records...</h1>";
     }

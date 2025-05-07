@@ -16,7 +16,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-6">
-                    <h1>Single User Data </h1>
+                    <h1>Single User Data 😊😊😊</h1>
                     
                     <table class="table table-bordered table-striped">
                         {{-- <tr><a href="" class="btn btn-success btn-sm mb-3">Add New </a></tr> --}}
