@@ -6,10 +6,13 @@ use App\Http\Controllers\StudentController;
 //     return view('welcome');
 // });
 
-Route::get('/',[StudentController::class,'showUser'])->name('home');
-Route::get('/single/{id}',[StudentController::class,'singleUser'])->name('single');
-Route::post('/add',[StudentController::class,'addUser'])->name('add');
-Route::get('/delete/{id}',[StudentController::class,'deleteUser'])->name('delete');
-Route::get('/update/{id}',[StudentController::class,'updateUser'])->name('update');
-Route::post('/up/{id}',[StudentController::class,'updateUserInDb'])->name('updateUserInDb');
-Route::get('/newuser',[StudentController::class,'addCity']);
+
+Route::controller(StudentController::class)->group(function(){
+    Route::get('/','showUser')->name('home');
+    Route::get('/single/{id}','singleUser')->name('single');
+    Route::post('/add','addUser')->name('add');
+    Route::get('/delete/{id}','deleteUser')->name('delete');
+    Route::get('/update/{id}','updateUser')->name('update');
+    Route::post('/up/{id}','updateUserInDb')->name('updateUserInDb');
+    Route::get('/newuser','addCity');
+});
