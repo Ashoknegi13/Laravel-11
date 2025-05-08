@@ -28,8 +28,13 @@
                             <input type="number" class="form-control" name="userage"><br>
                         </div>
                       <div class="mb-3">
-                            <label for="city">City</label>
-                            <input type="text" class="form-control" name="usercity"><br>
+                        <select name="usercity">
+                            @php
+                              $cid->each(function($cc){
+                                  echo "<option value=" . $cc->id .">" .$cc->city_name . "</option>";
+                             });
+                        @endphp
+                        </select>
                       </div>
                      <div class="mb-3">     
                          <button type="submit"  class="btn btn-primary">Submit</button>

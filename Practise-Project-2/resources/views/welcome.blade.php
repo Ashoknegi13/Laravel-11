@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Users Data</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <!-- Font Awesome CDN -->
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
     <style>
         nav .w-5{
             display: none;
@@ -38,9 +43,10 @@
                             <td> {{ $items->age }}</td>
                             <td> {{ $items->city_name}}</td>
                             {{-- <td> {{ $items->id }}</td> --}}
-                            <td><a href=" {{ route('single',$items->id) }}">sh</a></td>
-                            <td><a href="{{ route('delete',$items->id) }}">del</a></td>
-                            <td><a href="{{ route('update',$items->id) }}">upd</a></td>
+                            <td><a href=" {{ route('single',$items->id) }}" class="btn btn-success ">
+                                <ion-icon name="eye-outline"></ion-icon></a></td>
+                            <td><a href="{{ route('delete',$items->id) }}" class="btn btn-danger "><ion-icon name="trash-sharp"></ion-icon></a></td>
+                            <td><a href="{{ route('update',$items->id) }}" class="btn btn-primary "><ion-icon name="share-outline"></ion-icon></a></td>
                         </tr>
                     @endforeach
                     </table>

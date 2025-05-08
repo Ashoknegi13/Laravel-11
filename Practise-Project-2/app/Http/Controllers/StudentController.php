@@ -55,13 +55,35 @@ class StudentController extends Controller
   }
 
   public function updateUser(string $id){
-      $student = DB::table('students')
-                ->join('cities','students.city','=','cities.id')
-                ->select('students.name','students.email','students.age','cities.city_name')
-                ->where('students.id',$id)
-                ->first();
+      $student = DB::table('students')->find($id);
+      $c = DB::table('cities')->get ();
+            
 
-                  return view('updateUser',['annu'=>$student]);
+                  return view('updateUser',['data'=>$student,'cid'=>collect($c)]);
                 // return $student;
   } 
+
+  public function updateUserInDb(request $req , $id){
+    $student = DB::table('students')
+                ->where('id',$id)
+                ->update([
+                    'name'=>$req->username,
+                    'email'=>$req->useremail,
+                    'age'=>$req->userage,
+                    'city'=>$req->usercity
+                ]);
+
+                if($student){
+                  return redirect()->route('home');
+                }else{
+                  return "<script>alert('Failed.....!..')</script>";
+                }
+  } 
+
+  public function addCity(){
+      $student = DB::table('cities')->get();
+      return view('/addUser',['cid'=>$student]);
+
+  }
+
 }

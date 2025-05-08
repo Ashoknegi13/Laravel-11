@@ -13,29 +13,35 @@
                 <div class="col-4">
                     <h1>Update User</h1>
                    
-                    <form  method="post">
+                    <form  action="{{ route('updateUserInDb',$data->id) }}" method="post">
                         @csrf
                         <div class="mb-3">
                             <label for="username">Name</label>
-                            <input type="text" class="form-control" name="username" value="{{ $annu->name}}"><br>
+                            <input type="text" class="form-control" name="username" value="{{ $data->name}}"><br>
                         </div>
                         
                         <div class="mb-3">
                             <label for="email">Email</label>
-                            <input type="text" class="form-control" name="useremail"  ><br>
+                            <input type="text" class="form-control" name="useremail" value="{{ $data->email}}" ><br>
                         </div>
                         <div class="mb-3">
                             <label for="age">Age</label>
-                            <input type="number" class="form-control" name="userage"  ><br>
+                            <input type="number" class="form-control" name="userage" value="{{ $data->age}}" ><br>
                         </div>
                       <div class="mb-3">
-                            <option>>City</option>
-                            <select  ></select>
-                             
+                            <select name="usercity">
+                                @php
+                                  $cid->each(function($cc){
+                                      echo "<option value=" . $cc->id .">" .$cc->city_name . "</option>";
+                                 });
+                            @endphp
+                            </select>
                       </div>
                      <div class="mb-3">     
-                         <button type="submit"  class="btn btn-primary">Submit</button>
-                      </div>   
+                         <button type="submit"  class="btn btn-primary ">Submit</button>
+                        </div>   <br><Br><br>
+                             
+                      
                  </form>   
                 </div>
             </div>
