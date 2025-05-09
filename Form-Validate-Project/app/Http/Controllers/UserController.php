@@ -10,7 +10,7 @@ class UserController extends Controller
         $req->validate([
             'username'=>'required',
             'useremail'=>'required | email',
-            'userage'=>'required',
+            'userage'=>'required | numeric',
             'usercity'=>'required'
         ]);   
         return $req->all();
