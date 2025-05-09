@@ -14,6 +14,5 @@ Route::controller(StudentController::class)->group(function(){
     Route::get('/delete/{id}','deleteUser')->name('delete');
     Route::get('/update/{id}','updateUser')->name('update');
     Route::post('/up/{id}','updateUserInDb')->name('updateUserInDb');
-    
     Route::get('/newuser','addCity');
 });
