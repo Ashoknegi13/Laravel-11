@@ -25,9 +25,19 @@
                         @csrf           
                         <div class="mb-3">
                             <label for="username">Name</label>
-                            <input type="text" value="{{ old('username') }}" class="form-control @error('username') is-invalid @enderror" name="username"><br>
+                            <input type="text" value="{{ old('username') }}" class="form-control @error('username') is-invalid @enderror" name="username">
                             <span class="text-danger">
                                 @error('username')
+                                    {{ $message}}
+                                @enderror
+                            </span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email">Password</label>
+                            <input type="password" value="{{ old('userpass') }}" class="form-control @error('userpass') is-invalid @enderror" name="userpass">
+                            <span class="text-danger">
+                                @error('userpass')
                                     {{ $message}}
                                 @enderror
                             </span>
@@ -35,7 +45,7 @@
                         
                         <div class="mb-3">
                             <label for="email">Email</label>
-                            <input type="email" value="{{ old('useremail') }}" class="form-control @error('useremail') is-invalid @enderror" name="useremail"><br>
+                            <input type="email" value="{{ old('useremail') }}" class="form-control @error('useremail') is-invalid @enderror" name="useremail">
                             <span class="text-danger">
                                 @error('useremail')
                                     {{ $message}}
@@ -45,8 +55,8 @@
 
                         <div class="mb-3">
                             <label for="age">Age</label>
-                            <input type="number" value="{{ old('userage') }}" class="form-control @error('userage') is-invalid @enderror" name="userage"><br>
-                            <span class="text-danger">
+                            <input type="number" value="{{ old('userage') }}" class="form-control @error('userage') is-invalid @enderror" name="userage">
+                           <span class="text-danger">
                                 @error('userage')
                                     {{ $message}}
                                 @enderror
