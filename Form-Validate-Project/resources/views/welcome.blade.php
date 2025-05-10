@@ -12,28 +12,47 @@
             <div class="row">
                 <div class="col-4">
                     <h1>Add new User</h1>
-                   @if ($errors->any())
+                   
+   {{--               @if ($errors->any())
                     <ul class="alert alert-danger">
                         @foreach ($errors->all() as $item)
                                 <li>{{ $item }}</li>
                         @endforeach
                        </ul>    
-                   @endif
+                   @endif                                         --}}
+
                     <form action="{{ route('addUser') }}" method="post">
                         @csrf           
                         <div class="mb-3">
                             <label for="username">Name</label>
-                            <input type="text" class="form-control" name="username"><br>
+                            <input type="text" value="{{ old('username') }}" class="form-control @error('username') is-invalid @enderror" name="username"><br>
+                            <span class="text-danger">
+                                @error('username')
+                                    {{ $message}}
+                                @enderror
+                            </span>
                         </div>
                         
                         <div class="mb-3">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control" name="useremail"><br>
+                            <input type="email" value="{{ old('useremail') }}" class="form-control @error('useremail') is-invalid @enderror" name="useremail"><br>
+                            <span class="text-danger">
+                                @error('useremail')
+                                    {{ $message}}
+                                @enderror
+                            </span>
                         </div>
+
                         <div class="mb-3">
                             <label for="age">Age</label>
-                            <input type="number" class="form-control" name="userage"><br>
+                            <input type="number" value="{{ old('userage') }}" class="form-control @error('userage') is-invalid @enderror" name="userage"><br>
+                            <span class="text-danger">
+                                @error('userage')
+                                    {{ $message}}
+                                @enderror
+                            </span>
                         </div>
+
                       <div class="mb-3">
                             <label  class="form-label">City</label>
                             <select class="form-control" name="usercity">
@@ -41,6 +60,11 @@
                                 <option value="mumbai">Mumbai</option>    
                                 <option value="Goa">Goa</option>
                             </select> 
+                            <span class="text-danger">
+                                @error('usercity')
+                                    {{ $message}}
+                                @enderror
+                            </span>
                       </div>
                      <div class="mb-3">     
                          <button type="submit"  class="btn btn-primary">Submit</button>
