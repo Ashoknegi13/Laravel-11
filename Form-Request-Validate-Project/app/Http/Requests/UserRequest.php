@@ -30,18 +30,29 @@ class UserRequest extends FormRequest
         ];
     }
 
-    public function messages(){
-        return[
-            'username.required'=>'User Name Required',
-            'userpass.required'=>'Password Is Required',
-            'userpass.alpha_num'=>'only number and Alphabate allowed',
-            'userpass.min'=>'enter min 6 digit',
-            'userage.min'=>'min age required 18 ',
-            'useremail.required'=>'Email Address Must Must  Required',
-            'useremail.email'=>'Enter correct email format',
-            'userage.required'=> 'age is required',
-            'userage.numeric'=>'Enter only numerci value',
-            'usercity.required'=>'city is required'
+    // public function messages(){
+    //     return[
+    //         'username.required'=>':attribute Required',  // this is for use default input field name
+    //         'userpass.required'=>'Password Is Required',
+    //         'userpass.alpha_num'=>'only number and Alphabate allowed',
+    //         'userpass.min'=>'enter min 6 digit',
+    //         'userage.min'=>'min age required 18 ',
+    //         'useremail.required'=>'Email Address Must Must  Required',
+    //         'useremail.email'=>'Enter correct email format',
+    //         'userage.required'=> 'age is required',
+    //         'userage.numeric'=>'Enter only numerci value',
+     //         'usercity.required'=>'city is required'
+    //     ];
+    // }
+
+
+    public function attributes(){
+        return [
+           'username'=>'Name ',
+            'userpass'=>'Password ',
+            'useremail'=>'Email Address',
+            'userage'=>'Age',
+            'usercity'=>'City'
         ];
     }
 }
