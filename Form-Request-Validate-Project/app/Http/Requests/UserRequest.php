@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Str;
 
 class UserRequest extends FormRequest
 {
@@ -25,7 +26,7 @@ class UserRequest extends FormRequest
             'username'=>'required',
             'userpass'=>'required | alpha_num | min:6',
             'useremail'=>'required | email',
-            'userage'=>'required | min:18',
+            'userage'=>'required',
             'usercity'=>'required'
         ];
     }
@@ -55,4 +56,13 @@ class UserRequest extends FormRequest
             'usercity'=>'City'
         ];
     }
+
+    protected function prepareforValidation() : void{
+        $this->merge([
+            // 'username' => strtoupper($this->username)  // this is normal way
+            'username' => strtoupper(Str::slug($this->username))  // this is use for des between namer like Ashok-singh
+        ]);
+    }
+
+    // protected $stopOnFirstFailure = true;
 }

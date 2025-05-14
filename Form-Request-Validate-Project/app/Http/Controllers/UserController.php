@@ -15,7 +15,7 @@ class UserController extends Controller
         //     'username.required'=>'Please Fill the name....'
         // ]);
          
-        
-        return $req->all();
+        return $req->only(['username','usercity']);
+        // return $req->all();
     }
 }
