@@ -12,7 +12,7 @@
             <div class="row">
                 <div class="col-4">
                     <h1>All User</h1>
-                    <form action="">
+                    <form action="{{ route('addUser') }}" method="POST">
                         @csrf
                         <div class="mb-3">
                           <label for="username">Name</label>
