@@ -7,7 +7,7 @@ use Illuminate\Contracts\Validation\ValidationRule;
 
 class Uppercase implements ValidationRule
 {
-    /**
+    /** 
      * Run the validation rule.
      *
      * @param  \Closure(string, ?string=): \Illuminate\Translation\PotentiallyTranslatedString  $fail

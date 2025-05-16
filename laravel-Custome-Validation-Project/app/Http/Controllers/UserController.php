@@ -10,6 +10,5 @@ class UserController extends Controller
     public function getUser(UserRequest $req){
         return $req->all();
     }
-
-
 }
+ 
