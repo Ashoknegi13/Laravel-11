@@ -19,8 +19,10 @@ use App\Http\Controllers\UserController;
 // ]);
 
 
-Route::resource('users', UserController::class)->names([
-    'create' => 'users.add',
-    'index'=> 'users.home',
-    'destroy'=>'users.delete'
-]);
+// Route::resource('users', UserController::class)->names([
+//     'create' => 'users.add',
+//     'index'=> 'users.home',
+//     'destroy'=>'users.delete'
+// ]);
+
+Route::resource('users.comment', UserController::class);
