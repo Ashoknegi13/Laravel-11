@@ -26,3 +26,9 @@ use App\Http\Controllers\UserController;
 // ]);
 
 Route::resource('users.comment', UserController::class);
+
+// Route::resource('users.comment', UserController::class)->names([
+//     'create' => 'users.comment.add',
+//     'index'=> 'users.comment.index',
+//     'destroy'=>'users.comment.delete'
+// ]);
