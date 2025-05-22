@@ -13,12 +13,12 @@ class UserController extends Controller
     public function index()
     {
         $users = User::whereCity('Rudraprayag')
-                        ->select('name','email as User Email')
-                        ->toRawSql();
+                        // ->select('name','email as User Email')
+                        ->get();
         
-    return $users;
+    // return $users;
 
-        // return view("welcome",compact('users'));
+        return view("welcome",compact('users'));
  
     }
 

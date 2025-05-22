@@ -7,4 +7,4 @@ use App\Http\Controllers\UserController;
 //     return view('welcome');
 // });
 
-Route::resource('/',UserController::class);
+Route::resource('/ayush',UserController::class);
