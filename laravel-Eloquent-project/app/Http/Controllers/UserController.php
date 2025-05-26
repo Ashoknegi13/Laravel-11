@@ -12,9 +12,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::whereCity('Rudraprayag')
+        $users = User::get();
                         // ->select('name','email as User Email')
-                        ->get();
+                        
         
     // return $users;
 
