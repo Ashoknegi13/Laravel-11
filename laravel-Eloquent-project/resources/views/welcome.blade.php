@@ -10,7 +10,10 @@
  <body>
         <div class="container">
             <div class="row">
-                <col-7>
+                <div class="col-7">
+                    <h1 style="background-color:gray; text-align:center;color:white"> Eloquent  CRUD</h1>
+                    <p style=" text-align:center"><b><u>All User Data</u></b></p>
+                    
               <a class="btn btn-primary m-2" href="{{ route('addUser') }}"> Add User </a>
                     <table class="table table-striped table-bordered">
                         <tr>
@@ -37,7 +40,7 @@
                             </tr>   
                         @endforeach
                     </table>
-                </col-7>
+                </div>
             </div>
         </div>
  </body>
