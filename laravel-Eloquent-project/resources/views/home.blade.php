@@ -1,21 +1,13 @@
- <!DOCTYPE html>
- <html lang="en">
- <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Eloquent Project</title>
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
- </head>
- <body>
-        <div class="container">
-            <div class="row">
-                <div class="col-7">
-                    <h1 style="background-color:gray; text-align:center;color:white"> Eloquent  CRUD</h1>
-                    <p style=" text-align:center"><b><u>All User Data</u></b></p>
-                    
-              <a class="btn btn-primary m-2" href="{{ route('addUser') }}"> Add User </a>
-                    <table class="table table-striped table-bordered">
+@extends('layout')
+
+@section('title')
+All Users
+@endsection
+
+ 
+@section('content')
+    <a href="" class="btn btn-primary  mb-3"> Add User</a>                    
+<table class="table table-striped table-bordered">
                         <tr>
                             <th>Id</th>
                             <th>Name</th>
@@ -45,3 +37,5 @@
         </div>
  </body>
  </html>
+
+ @endsection
