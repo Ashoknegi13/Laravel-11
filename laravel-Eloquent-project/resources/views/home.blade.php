@@ -26,7 +26,7 @@ All Users
                                 <td>{{ $item->email}}</td>
                                 <td>{{ $item->age}}</td>
                                 <td>{{ $item->city}}</td>
-                                <td><a class="btn btn-primary btn-sm">View</a></td>
+                                <td><a class="btn btn-primary btn-sm" href="{{ route('showUser') }}">View</a></td>
                                 <td><a class="btn btn-success btn-sm">edit</a></td>
                                 <td><a class="btn btn-danger btn-sm">delete</a></td>
                             </tr>   

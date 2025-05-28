@@ -10,3 +10,5 @@ use App\Http\Controllers\UserController;
 Route::resource('/',UserController::class);
 
 Route::view('/add','addUser')->name('addUser');
+
+// Route::resource('/show/{id}', [UserController::class,'show'])->name('showUser');
