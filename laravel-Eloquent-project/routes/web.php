@@ -7,8 +7,4 @@ use App\Http\Controllers\UserController;
 //     return view('welcome');
 // });
 
-Route::resource('/',UserController::class);
-
-Route::view('/add','addUser')->name('addUser');
-
-// Route::resource('/show/{id}', [UserController::class,'show'])->name('showUser');
+Route::resource('user',UserController::class);

@@ -27,7 +27,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('adduser');
     }
 
     /**
@@ -41,9 +41,11 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(User $user)
+    public function show(String  $id)
     {
-    
+         $stu = User::find($id);
+        //  return $stu;
+        return view('viewuser', compact('stu'));
     }
 
     /**
@@ -51,7 +53,8 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+         $stu = User::where('id',$user)->get();
+        return view('updateuser', compact('stu'));
     }
 
     /**

@@ -6,7 +6,7 @@ All Users
 
  
 @section('content')
-    <a href="" class="btn btn-primary  mb-3"> Add User</a>                    
+    <a href="{{ route('user.create') }}" class="btn btn-primary  mb-3"> Add User</a>                    
 <table class="table table-striped table-bordered">
                         <tr>
                             <th>Id</th>
@@ -26,8 +26,8 @@ All Users
                                 <td>{{ $item->email}}</td>
                                 <td>{{ $item->age}}</td>
                                 <td>{{ $item->city}}</td>
-                                <td><a class="btn btn-primary btn-sm" href="">View</a></td>
-                                <td><a class="btn btn-success btn-sm">edit</a></td>
+                                <td><a class="btn btn-primary btn-sm" href="{{ route('user.show',$item->id)}}">View</a></td>
+                                <td><a class="btn btn-success btn-sm" href="{{ route('user.edit',$item->id)}}">edit</a></td>
                                 <td><a class="btn btn-danger btn-sm">delete</a></td>
                             </tr>   
                         @endforeach
