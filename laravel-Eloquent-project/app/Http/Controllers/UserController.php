@@ -41,10 +41,13 @@ class UserController extends Controller
 
        $user = new User;
 
+
        $user->name = $req->username;
        $user->age = $req->userage;
        $user->email = $req->useremail;
        $user->city = $req->usercity;
+
+$user->save();
 
         return redirect()->route('user.index')->with('status','New User Add Successfullty..');
 
@@ -72,9 +75,27 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, User $user)
+    public function update(Request $req)
     {
-        //
+    //     $user = new User;
+
+
+    //    $user->name = $req->username;
+    //    $user->age = $req->userage;
+    //    $user->email = $req->useremail;
+    //    $user->city = $req->usercity;
+
+    //    $user->save();
+
+    User::create([
+        'name'=>$req->username,
+        'email'=>$req->useremail,
+        'age'=>$req->userage,
+        'city'=>$req->usercity,
+        ]);
+
+
+        return redirect()->route('user.index')->with('status','New User Add Successfullty..');
     }
 
     /**

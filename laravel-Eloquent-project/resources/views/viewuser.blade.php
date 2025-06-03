@@ -36,7 +36,7 @@
 
   </table>
 
-  <a href="{{ route('user.index') }}" class="btn btn-danger">Home</a>
-  
+  <a href="{{ route('user.index') }}" class="btn btn-primary">Home</a>
+
   
   @endsection
