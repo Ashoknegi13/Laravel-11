@@ -1,13 +1,13 @@
   @extends('layout')
 
-  @section('titler')
+  @section('title')
         Add New User
   @endsection
 
 
 
   @section('content')
-  <form action="" method="POST" autocomplete="off">
+  <form action="{{ route('user.store') }} " method="POST" autocomplete="on">
     @csrf
 
     <div class="mb-3">
@@ -28,7 +28,7 @@
 
     <div class="mb-3">
         <label for="userage" class="form-label">Age :</label>
-        <input type="number" name="userage" class="form-control"   >
+        <input type="number" name="userage" class="form-control"  value="{{ old('userage') }}" >
     </div>
 
     <div class="mb-3">

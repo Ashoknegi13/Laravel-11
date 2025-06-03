@@ -1,6 +1,6 @@
   @extends('layout')
 
-  @section('titler')
+  @section('title')
         User Details
   @endsection
 

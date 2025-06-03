@@ -33,9 +33,21 @@ class UserController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $req)
     {
-        //
+     $req->validate([
+                'useremail'=> 'email'
+        ]);
+
+       $user = new User;
+
+       $user->name = $req->username;
+       $user->age = $req->userage;
+       $user->email = $req->useremail;
+       $user->city = $req->usercity;
+
+        return redirect()->route('user.index')->with('status','New User Add Successfullty..');
+
     }
 
     /**

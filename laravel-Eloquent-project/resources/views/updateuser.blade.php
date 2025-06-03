@@ -1,18 +1,18 @@
       @extends('layout')
 
-  @section('titler')
+  @section('title')
       Update User Data
   @endsection
 
 
 
   @section('content')
-  <form action="" method="POST" autocomplete="off">
+  <form action="  " method="" autocomplete="off">
     @csrf
 
     <div class="mb-3">
         <label for="username" class="form-label">UserName :</label>
-        <input type="text" name="username" class="form-control" value="{{ old('username') }}"  @error('username') is-invalid @enderror >
+        <input type="text" name="username" class="form-control" value=""  @error('username') is-invalid @enderror >
         <span class="text-danger">
             @error('username')
                 {{ $message}}

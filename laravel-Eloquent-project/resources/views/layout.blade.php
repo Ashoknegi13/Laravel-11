@@ -13,10 +13,19 @@
                 <div class="col-7">
                     <h1 style="background-color:gray; text-align:center;color:white"> Eloquent  CRUD</h1>
                     <p style=" text-align:center">
-                        
                         <b><u>@yield('title')</u></b>
                     </p>
                 
+                    <div class="row">
+                        <div class="col-8">
+                            @if(session('status'))
+                             <div class="alert alert-success">
+                                 {{ session('status')}}
+                             </div>
+                            @endif
+                        </div>
+                    </div>
+
                  @yield('content') 
                 </div>
             </div> 
