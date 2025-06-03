@@ -91,7 +91,7 @@ $user->save();
         'name'=>$req->username,
         'email'=>$req->useremail,
         'age'=>$req->userage,
-        'city'=>$req->usercity,
+        'city'=>$req->usercity, 
         ]);
 
 
