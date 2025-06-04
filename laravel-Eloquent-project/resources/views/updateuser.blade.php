@@ -7,7 +7,7 @@
 
 
   @section('content')
-  <form action=" " method="" autocomplete="off">
+  <form action="{{ route('user.update',$user->id) }}" method="" autocomplete="off">
     @csrf
 
     <div class="mb-3">

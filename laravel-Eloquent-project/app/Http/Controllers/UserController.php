@@ -77,27 +77,9 @@ $user->save();
      */
     public function update(Request $req)
     {
-    //     $user = new User;
+  
 
-
-    //    $user->name = $req->username;
-    //    $user->age = $req->userage;
-    //    $user->email = $req->useremail;
-    //    $user->city = $req->usercity;
-
-    //    $user->save();
-
-    User::create([
-        'name'=>$req->username,
-        'email'=>$req->useremail,
-        'age'=>$req->userage,
-        'city'=>$req->usercity, 
-        ]);
-
-
-        return redirect()->route('user.index')->with('status','New User Add Successfullty..');
-    }
-
+    } 
     /**
      * Remove the specified resource from storage.
      */
