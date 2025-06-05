@@ -66,18 +66,35 @@ $user->save();
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(User $us)
+    public function edit(User $user)
     {
-         $user = User::find($us->id);
-        return view('updateuser', compact('user'));
+         $users = User::find($user->id);   
+        //   return $users;
+        return view('updateuser', compact('users'));
     }
-
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $req)
+    public function update(Request $req, String $id)
     {
-  
+        $user = User::where('id',$id)
+                        ->update([
+                        'name'=> $req->username,
+                        'email'=>$req->useremail,
+                        'age'=>$req->userage,
+                        'city'=>$req->usercity
+                        ]);
+
+      
+        // $user->name = $req->username;
+        // $user->email = $req->useremail;
+        // $user->age = $req->userage;
+        // $user->city = $req->usercity;
+
+        // $user->save();
+
+
+        return redirect()->route('user.index')->with('status','Update Successfully');
 
     } 
     /**

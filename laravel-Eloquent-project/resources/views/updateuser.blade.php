@@ -7,12 +7,13 @@
 
 
   @section('content')
-  <form action="" method="" autocomplete="off">
+  <form action="{{ route('user.update',$users->id) }}" method="POST" autocomplete="off">
     @csrf
+    @method('PUT')
 
     <div class="mb-3">
         <label for="username" class="form-label">UserName :</label>
-        <input type="text" name="username" class="form-control" value="{{ $user->name}}"  @error('username') is-invalid @enderror >
+        <input type="text" name="username" class="form-control" value="{{ $users->name}}"  @error('username') is-invalid @enderror >
         <span class="text-danger">
             @error('username')
                 {{ $message}}
@@ -23,7 +24,7 @@
 
 <div class="mb-3">
         <label for="useremail" class="form-label">Email :</label>
-        <input type="email" name="useremail" class="form-control" value="{{ $user->email}}" @error('useremail') is-invalid @enderror>
+        <input type="email" name="useremail" class="form-control" value="{{ $users->email}}" @error('useremail') is-invalid @enderror>
     <span class="text-danger">
             @error('useremail')
                 {{ $message}}
@@ -33,7 +34,7 @@
 
     <div class="mb-3">
         <label for="userage" class="form-label">Age :</label>
-        <input type="number" name="userage" class="form-control"   value="{{ $user->age}}" @error('userage') is-invalid @enderror>
+        <input type="number" name="userage" class="form-control"   value="{{ $users->age}}" @error('userage') is-invalid @enderror>
      <span class="text-danger">
             @error('userage')
                 {{ $message}}
@@ -45,7 +46,7 @@
 <label for="usercity" class="form-label">City :</label>
 
             <select name="usercity" class="form-control">
-                <option value="{{ $user->city}}">{{ $user->city}}</option>
+                <option value="{{ $users->city}}">{{ $users->city}}</option>
 
                 <option value="Rudraprayag">Rudraprayag</option>
 

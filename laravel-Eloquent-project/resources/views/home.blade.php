@@ -26,9 +26,9 @@ All Users
                                 <td>{{ $item->email}}</td>
                                 <td>{{ $item->age}}</td>
                                 <td>{{ $item->city}}</td>
-                                <td><a class="btn btn-primary btn-sm" href="{{ route('user.show',$item->id)}}">View</a></td>
-                                <td><a class="btn btn-success btn-sm" href="{{ route('user.edit',$item->id)}}">edit</a></td>
-                                <td><a class="btn btn-danger btn-sm">delete</a></td>
+                                <td><a class="btn btn-primary btn-sm" href="{{ route('user.show',$item->id)}}"><ion-icon name="eye-outline"></ion-icon></a></td>
+                                <td><a class="btn btn-success btn-sm" href="{{ route('user.edit',$item->id)}}"><ion-icon name="create-outline"></ion-icon></a></td>
+                                <td><a class="btn btn-danger btn-sm "><ion-icon name="trash-outline"></ion-icon></a></td>
                             </tr>   
                         @endforeach
                     </table>
