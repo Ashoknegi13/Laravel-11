@@ -66,9 +66,9 @@ $user->save();
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(String $id)
+    public function edit(User $us)
     {
-         $user = User::find($id);
+         $user = User::find($us->id);
         return view('updateuser', compact('user'));
     }
 
