@@ -1,3 +1,5 @@
+
+
 @extends('layout')
 
 @section('title')
@@ -38,6 +40,7 @@ All Users
                             </tr>   
                         @endforeach
                     </table>
+    
                 </div>  
             </div>
         </div>

@@ -7,6 +7,11 @@
 
 
   @section('content')
+    <div>
+    {{-- <a href="{{ route('user.index') }}"  class="btn btn-primary ">back</a> --}}
+    </div>
+
+
   <form action="{{ route('user.update',$users->id) }}" method="POST" autocomplete="off">
     @csrf
     @method('PUT')
@@ -56,8 +61,10 @@
     </div>
 
     <div>
-        <button type="submit" class="btn btn-success" value="save">Submit</button>
+        <button type="submit" class="btn btn-success btn-sm " value="save">Submit</button>
     </div>
+
+    
 
   </form>
   
