@@ -24,7 +24,7 @@
 
 <div class="mb-3">
         <label for="useremail" class="form-label">Email :</label>
-        <input type="email" name="useremail" class="form-control" value="{{ $users->email}}" @error('useremail') is-invalid @enderror>
+        <input type="email" name="useremail" class="form-control" value="{{ $users->email ,old('username')}}" @error('useremail') is-invalid @enderror>
     <span class="text-danger">
             @error('useremail')
                 {{ $message}}

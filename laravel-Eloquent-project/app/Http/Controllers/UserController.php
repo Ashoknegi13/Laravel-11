@@ -77,6 +77,13 @@ $user->save();
      */
     public function update(Request $req, String $id)
     {
+        $req->validate([
+            'username'=> 'required | alpha',
+            'useremail'=> 'required |email',
+            'userage'=> 'required |numeric',
+            'usercity'=> 'required | alpha'
+        ]); 
+
         $user = User::where('id',$id)
                         ->update([
                         'name'=> $req->username,
@@ -85,6 +92,7 @@ $user->save();
                         'city'=>$req->usercity
                         ]);
 
+        return redirect()->route('user.index')->with('status','Update Successfully');
       
         // $user->name = $req->username;
         // $user->email = $req->useremail;
@@ -94,7 +102,6 @@ $user->save();
         // $user->save();
 
 
-        return redirect()->route('user.index')->with('status','Update Successfully');
 
     } 
     /**
