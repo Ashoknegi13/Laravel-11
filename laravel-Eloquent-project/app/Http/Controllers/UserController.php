@@ -12,7 +12,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::get();
+        $users = User::simplepaginate(3);
                         // ->select('name','email as User Email')
                         
         
