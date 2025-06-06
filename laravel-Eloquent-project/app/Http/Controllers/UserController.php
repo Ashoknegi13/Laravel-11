@@ -109,6 +109,9 @@ $user->save();
      */
     public function destroy(User $user)
     {
-        //
+        $us = User::find($user->id);
+        $us->delete();
+
+        return redirect()->route('user.index')->with('status','User Details Successfully Delete');  
     }
 }
