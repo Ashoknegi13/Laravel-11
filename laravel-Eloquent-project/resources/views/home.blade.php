@@ -40,7 +40,7 @@ All Users
                             </tr>   
                         @endforeach
                     </table>
-                    {{ $users->links()}}
+                    {{ $users->links() }}
                 </div>  
             </div>
         </div>

@@ -23,7 +23,7 @@
                         <div class="col-8">
                             @if(session('status'))
                              <div class="alert alert-success">
-                                 {{ session('status')}}
+                                 {{ session('status')}} 
                              </div>
                             @endif
                         </div>

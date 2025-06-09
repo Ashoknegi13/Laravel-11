@@ -41,7 +41,7 @@
         <label for="userage" class="form-label">Age :</label>
         <input type="number" name="userage" class="form-control"   value="{{ $users->age}}" @error('userage') is-invalid @enderror>
      <span class="text-danger">
-            @error('userage')
+            @error('userage') 
                 {{ $message}}
             @enderror
         </span>
