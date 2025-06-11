@@ -58,7 +58,8 @@ $user->save();
      */
     public function show(String  $id)
     {
-         $stu = User::find($id);
+        //  $stu = User::find($id);           when we pass id which is not exit in our db so it show error
+         $stu = User::findorfail($id);     //  when we pass id which is not exit in our db so it show  404 page 
         //  return $stu;
         return view('viewuser', compact('stu'));
     }
