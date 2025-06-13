@@ -1,0 +1,21 @@
+[
+    {
+        "id":1,
+        "name":"ashok",
+        "age":21,
+        "city":"Gurgraon"
+    },
+    {
+        "id":2,
+        "name":"Preeti",
+        "age":21,
+        "city":"Bangluru"
+    },
+    {
+        "id":3,
+        "name":"rahul",
+        "age":17,
+        "city":"Srinagr"
+    }
+]
+    
