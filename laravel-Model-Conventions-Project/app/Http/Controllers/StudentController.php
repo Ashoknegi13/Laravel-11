@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Student;
 
 class StudentController extends Controller
 {
@@ -11,15 +12,23 @@ class StudentController extends Controller
      */
     public function index()
     {
-        //
-    }
+        $student = Student::all();
+        return $student;
+    } 
 
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //
+        $student = new Student;
+
+        $student->name ="ayush";
+        $student->age =55;
+        $student->city ="pune";
+
+        $student->save();
+
     }
 
     /**
