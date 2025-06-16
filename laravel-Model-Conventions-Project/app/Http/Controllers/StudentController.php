@@ -26,7 +26,6 @@ class StudentController extends Controller
         $student->name ="ayush";
         $student->age =55;
         $student->city ="pune";
-
         $student->save();
 
     }
