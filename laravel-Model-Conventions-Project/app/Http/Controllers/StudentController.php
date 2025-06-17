@@ -23,11 +23,10 @@ class StudentController extends Controller
     {
         $student = new Student;
 
-        $student->name ="ayush";
-        $student->age =55;
-        $student->city ="pune";
+        $student->name ="anita";
+        $student->age =15;
+        $student->city ="gwar";
         $student->save();
-
     }
 
     /**
@@ -43,7 +42,7 @@ class StudentController extends Controller
      */
     public function show(string $id)
     {
-        //
+         // 
     }
 
     /**
