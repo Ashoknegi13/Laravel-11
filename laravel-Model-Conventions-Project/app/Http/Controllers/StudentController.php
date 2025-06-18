@@ -22,10 +22,9 @@ class StudentController extends Controller
     public function create()
     {
         $student = new Student;
-
-        $student->name ="anita";
-        $student->age =15;
-        $student->city ="gwar";
+        $student->name ="AYUSH";
+        $student->age =36;
+        // $student->city ="gwar";
         $student->save();
     }
 

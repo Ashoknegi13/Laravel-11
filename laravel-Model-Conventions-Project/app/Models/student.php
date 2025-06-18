@@ -7,8 +7,14 @@ class Student extends Model
     protected $table = "my_table";
     protected $primaryKey = "student_id";
 
-     const CREATED_AT = "Cretaion_date";
-     const UPDATED_AT = "Updation_date";
+    //  const CREATED_AT = "Cretaion_date";
+    //  const UPDATED_AT = "Updation_date";
+
+  public  $timestamps = false;
+
+    protected $attributes = [
+        'city' => 'rudraprayag'
+    ];
     
 }
  
