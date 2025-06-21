@@ -12,8 +12,13 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $student = Student::with('contect')->get();
+        $student = Student::withWhereHas('contect',function($query){
+            $query->where('city','banglore');
+        })->get();
         return $student;
+        
+        // echo $student->name. "<br>";
+        // echo $student->contect->email;
     }
 
     /**
