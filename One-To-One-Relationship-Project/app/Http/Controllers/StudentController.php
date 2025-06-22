@@ -12,7 +12,8 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $student = Student::withWhereHas('contect',function($query){
+        $student = Student::where('gender','female')
+        ->WhereHas('contect',function($query){
             $query->where('city','banglore');
         })->get();
         return $student;
