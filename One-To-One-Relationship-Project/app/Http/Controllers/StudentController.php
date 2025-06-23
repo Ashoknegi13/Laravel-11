@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Student;
+use App\Models\Contect;
 
 class StudentController extends Controller
 {
@@ -12,11 +13,9 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $student = Student::where('gender','female')
-        ->WhereHas('contect',function($query){
-            $query->where('city','banglore');
-        })->get();
+        $student = Contect::all();
         return $student;
+
         
         // echo $student->name. "<br>";
         // echo $student->contect->email;
