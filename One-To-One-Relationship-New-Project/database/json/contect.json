@@ -1,0 +1,30 @@
+[
+    {
+        "email":"preeti@gmail.com",
+        "phone":"7829020",
+        "address":"### 234 Banglore",
+        "city": "Banglore",
+        "student_id": 2
+    },
+   {
+        "email":"rahul@gmail.com",
+        "phone":"000000",
+        "address":"### 1212 Srinager",
+        "city": "Pauri",
+        "student_id": 3
+    },
+        {
+        "email":"ashok@gmail.com",
+        "phone":"44440",
+        "address":"### 111 Gurgaon",
+        "city": "Hariyana",
+        "student_id":1
+    },
+        {
+        "email":"priya@gmail.com",
+        "phone":"111110",
+        "address":"### 999 rpg",
+        "city": "Rudraprayag",
+        "student_id":4
+    }
+]
