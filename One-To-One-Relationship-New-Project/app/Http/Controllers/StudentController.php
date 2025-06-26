@@ -12,7 +12,7 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $student  =   Student::where('gender','female')
+        $student  =  Student::where('gender','female')
                                  ->withWhereHas('contect',function($query){
                                         $query->where('city','Banglore');
                                 })->with('contect')->get();
