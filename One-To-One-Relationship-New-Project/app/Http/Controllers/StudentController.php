@@ -24,7 +24,18 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        $student = Student::create([
+            'name'=>'rahul negi',
+            'age'=>33,
+            'gender'=>"male"
+        ]); 
+
+        $student->contect()->create([
+            'email'=>'bholers@gmail.com',
+            'phone'=>'8264337',
+            'address'=>'### gasyMahadev ',
+            'city'=>'Srinager'
+        ]);
     }
 
     /**
