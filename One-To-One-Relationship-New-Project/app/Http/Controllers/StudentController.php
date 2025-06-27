@@ -51,7 +51,7 @@ class StudentController extends Controller
      */
     public function show(string $id)
     {
-        //
+        // 
     }
 
     /**
