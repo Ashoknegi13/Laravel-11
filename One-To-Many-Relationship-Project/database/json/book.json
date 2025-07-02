@@ -1,0 +1,22 @@
+[
+    {
+        "book":"Coding With C",
+        "book_details":"This is for those want to learn the C languagae",
+        "student_id":1
+    },
+    {
+        "book":"Python Programming",
+        "book_details":"This is Pythong Programming Language",
+        "student_id":2
+    },
+    {
+        "book":"Java Development",
+        "book_details":"This is for those want to learn Java Language",
+        "student_id":1
+    },
+    {
+        "book":"Laravel Development",
+        "book_details":"This is for Backend Programming Languager",
+        "student_id":3
+    }
+]
