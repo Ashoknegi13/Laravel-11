@@ -11,7 +11,9 @@ class StudentController extends Controller
      */
     public function index()
     {
-            $student = Student::with('book')->get();
+            $student = Student::withWhereHas('book',function($query){
+                   return $query->where('student_id',1);
+            })->get();
             return $student;   
     }
 
