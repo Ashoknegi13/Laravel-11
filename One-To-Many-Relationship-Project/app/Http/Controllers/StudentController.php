@@ -10,11 +10,20 @@ class StudentController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-            $student = Student::withWhereHas('book',function($query){
-                   return $query->where('student_id',1);
-            })->get();
-            return $student;   
+        {
+    //         $student = Student::withWhereHas('book',function($query){
+    //                return $query->where('student_id',1);
+    //         })->get();
+      
+     //       $student = Student::has('book')
+    //         ->with('book')->get();
+
+    //          $student = Student::doesntHave('book')
+    //         ->with('book')->get();
+    
+      $student = Student::select(['name','age'])->withCount('book')->get();
+
+                return $student;   
     }
 
     /**
