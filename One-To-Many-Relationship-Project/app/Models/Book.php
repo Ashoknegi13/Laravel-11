@@ -8,5 +8,7 @@ class Book extends Model
 {
     Public $timestamps = false;
 
-
+  public function student(){
+    return $this->hasMany(Student::class);
+  }
 }

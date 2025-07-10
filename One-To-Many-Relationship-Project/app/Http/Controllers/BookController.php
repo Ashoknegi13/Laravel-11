@@ -8,7 +8,7 @@ use App\Models\Book;
 class BookController extends Controller
 {
     public function showBook(){
-        $books = Book::get();
+        $books = Book::with('student')->get();
         return $books;
     }
 }
