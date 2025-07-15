@@ -12,7 +12,7 @@ class BookController extends Controller
         // return $books;
 
         foreach($books as $book){
-            echo "<div style='border:1px solid black ;margin-bottom:10px  '>
+            echo "<div style='border:1px solid black;margin-bottom:10px  '>
                         <h1>$book->book</h1>
                         <span>$book->book_details</span>
                         <h3>{$book->student->name}</h3>
