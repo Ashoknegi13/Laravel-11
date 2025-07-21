@@ -21,7 +21,9 @@ class StudentController extends Controller
     //          $student = Student::doesntHave('book')
     //         ->with('book')->get();
     
-      $student = Student::select(['name','age'])->withCount('book')->get();
+      $student = Student::withWhereHas('book',function($query){
+                return $query->where('student_id',1);
+      })->get();
 
                 return $student;   
     }
