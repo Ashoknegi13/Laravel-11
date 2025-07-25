@@ -22,7 +22,7 @@ class StudentController extends Controller
     //         ->with('book')->get();
     
       $student = Student::withWhereHas('book',function($query){
-                return $query->where('student_id',1);
+                return $query->where('student_id',2);
       })->get();
 
                 return $student;   
