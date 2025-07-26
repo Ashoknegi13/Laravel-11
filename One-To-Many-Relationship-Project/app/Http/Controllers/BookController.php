@@ -16,7 +16,7 @@ class BookController extends Controller
       
       
       $books = Book::select(['book','student_id'])->withWhereHas('student',function($query){
-            return $query->select(['id','name'])->where('name','ashok');
+            return  $query->select(['id','name'])->where('name','ashok');
       })->get();
       
         return $books;  
