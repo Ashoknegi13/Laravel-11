@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 class Book extends Model
 {
     Public $timestamps = false;
-  public function student(){
+
+   public function student(){
     return $this->belongsTo(Student::class);
   }
 }
