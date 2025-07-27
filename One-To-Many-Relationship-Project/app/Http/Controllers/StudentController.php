@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Student;
+use App\Models\Book;
 class StudentController extends Controller
 {
     /**
@@ -18,15 +19,12 @@ class StudentController extends Controller
         //    $student = Student::has('book','>=',1)
         //     ->with('book')->get();
 
-             $student = Student::doesntHave('book')
-            ->with('book')->get();
-    
-    //   $student = Student::withWhereHas('book',function($query){
-    //             return $query->where('student_id',2);
-    //   })->get();
-
-
+            //  $student = Student::doesntHave('book')
+            // ->with('book')->get();
+     
 // $student = Student::get();
+
+$student = Student::with('book')->get();
 
                 return $student;   
     }
@@ -36,7 +34,15 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        $book = new Book([
+            'book' => "Ashookkkkk new course ",
+            'book_details' => "this is new Asjhokkk coursee"
+        ]);
+
+        $stu = Student::find(1);
+        $stu->book()->save($book);
+        
+
     }
 
     /**
