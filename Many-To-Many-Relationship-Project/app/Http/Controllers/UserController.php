@@ -12,8 +12,26 @@ class UserController extends Controller
      */
     public function index()
     {
-        $user = User::with('role')->get();
-        return $user;
+        $users = User::with('role')->get();
+        // return $users;
+
+            foreach($users as $user){
+                echo $user->name ."<br>";
+                echo $user->email. "<br>";
+                echo "<b>Role :  </b>";
+                foreach($user->role as $roles){
+                    echo "<b>".$roles->role_name."</b><br>";
+                }
+                echo "<hr>";
+            
+            }
+
+
+    //    echo "Name :<b>".$user->name."<br><br>Roles : </b><br>";  
+    //     foreach($user->role as $roles){
+    //         echo $roles->role_name ."<br>";
+    //         // echo  $roles->role->role_name ."<br>";
+    //     }
     }
 
     /**
