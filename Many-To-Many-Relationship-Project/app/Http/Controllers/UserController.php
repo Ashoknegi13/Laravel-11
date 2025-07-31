@@ -39,7 +39,13 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        $user = User::find(3);
+        //  $user->role()->attach(1);
+
+        // $user->role()->detach([4,4]);
+        
+        $user->role()->sync(3);
+
     }
 
     /**
