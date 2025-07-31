@@ -12,20 +12,20 @@ class RoleController extends Controller
      */
     public function index()
     {
-        $roles = Role::with('user')->get();
-        // return $roles;
+        $roles = Role::find(1);
+        return $roles->user;
     
-        foreach($roles as $role){
-            echo "<b>Role :   </b>" . $role->role_name."<br>";
+        // foreach($roles as $role){
+        //     echo "<b>Role :   </b>" . $role->role_name."<br>";
 
-             echo "<b>User Name : </b>";
-            foreach($role->user as $users){
-                echo "/ " . $users->name ;
-                // echo $users->email ."<br>";
-            }
+        //      echo "<b>User Name : </b>";
+        //     foreach($role->user as $users){
+        //         echo "/ " . $users->name ;
+        //         // echo $users->email ."<br>";
+        //     }
 
-            echo " <hr>";
-        }
+        //     echo " <hr>";
+        // }
     
     
     }
