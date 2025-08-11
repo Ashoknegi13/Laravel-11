@@ -20,7 +20,7 @@ class NumberSeeder extends Seeder
         $num->each(function($data){
             Phone_number::Create([
                 'numbers'=>$data->number,
-                'company_id'=>$data->c_id
+                'industrie_id'=>$data->c_id
             ]);
         });
     }

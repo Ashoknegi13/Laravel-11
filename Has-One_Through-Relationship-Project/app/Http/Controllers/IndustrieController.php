@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Companie;
+use App\Models\Industrie;
 use Illuminate\Http\Request;
 
-class CompanieController extends Controller
+class IndustrieController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +34,7 @@ class CompanieController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Companie $companie)
+    public function show(Industrie $companie)
     {
         //
     }
@@ -42,7 +42,7 @@ class CompanieController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Companie $companie)
+    public function edit(Industrie $companie)
     {
         //
     }
@@ -50,7 +50,7 @@ class CompanieController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Companie $companie)
+    public function update(Request $request, Industrie $companie)
     {
         //
     }
@@ -58,7 +58,7 @@ class CompanieController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Companie $companie)
+    public function destroy(Industrie $companie)
     {
         //
     }

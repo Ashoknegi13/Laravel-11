@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('phone_numbers', function (Blueprint $table) {
             $table->id();
             $table->string('numbers');
-            $table->foreignId('company_id')->references('id')->on('companies');
+            $table->foreignId('industrie_id')->references('id')->on('Industries');
             // $table->timestamps();
         });
     }
