@@ -14,7 +14,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::with("IndustriePhoneNumber")->get();
+        $users = User::with("IndustriePhoneNumber")->find(2);
         return $users;
     }
 
