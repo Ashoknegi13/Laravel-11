@@ -8,6 +8,10 @@ class User extends Model
 {
     public $timestamps = False;
 
+public function industry(){
+    return $this->hasOne(Industrie::class);
+}
+
     public function IndustriePhoneNumber(){
         return $this->hasOneThrough(Phone_number::class,Industrie::class);
     }
